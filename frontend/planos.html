@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<title>Planos</title>
+
+<link rel="stylesheet" href="css/estilos.css">
+
+</head>
+
+<body>
+<div class="menu">
+
+<a href="index.html">Dashboard</a>
+
+<a href="clientes.html">Clientes</a>
+
+<a href="propietarios.html">Propietarios</a>
+
+<a href="planos.html">Planos</a>
+
+<a href="planos_pendientes.html">Pendientes</a>
+
+</div>
+<h1>Planos</h1>
+
+<button onclick="location.href='plano_form.html'">
+Nuevo Plano
+</button>
+
+<br><br>
+
+<h3>Buscar</h3>
+
+Cliente
+<input type="text" id="buscarCliente" onkeyup="filtrarPlanos()">
+
+Dirección
+<input type="text" id="buscarDireccion" onkeyup="filtrarPlanos()">
+
+Estado
+<select id="buscarEstado" onchange="filtrarPlanos()">
+
+<option value="">Todos</option>
+<option value="Pendiente">Pendiente</option>
+<option value="En proceso">En proceso</option>
+<option value="Finalizado">Finalizado</option>
+
+</select>
+
+<br><br>
+
+<table border="1">
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+<th>Fecha</th>
+<th>Tipo</th>
+<th>Cliente</th>
+<th>Calle</th>
+<th>Número</th>
+<th>Departamento</th>
+<th>Entre Calle 1</th>
+<th>Entre Calle 2</th>
+<th>Entre Calle 3</th>
+<th>Localidad</th>
+<th>Estado</th>
+<th>Estado Pago</th>
+<th>Precio</th>
+<th>Monto Pagado</th>
+<th>Observación</th>
+<th>Acciones</th>
+
+</tr>
+
+</thead>
+
+<tbody id="tablaPlanos">
+
+</tbody>
+
+</table>
+
+<script src="js/planos.js"></script>
+
+</body>
+</html>

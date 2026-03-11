@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<title>Cliente</title>
+
+<link rel="stylesheet" href="css/estilos.css">
+
+</head>
+
+<body>
+    <div class="menu">
+
+<a href="index.html">Dashboard</a>
+
+<a href="clientes.html">Clientes</a>
+
+<a href="propietarios.html">Propietarios</a>
+
+<a href="planos.html">Planos</a>
+
+<a href="planos_pendientes.html">Pendientes</a>
+
+</div>
+
+<h1>Formulario Cliente</h1>
+
+<form id="formCliente">
+
+<label>Nombre</label><br>
+<input type="text" id="nombre" required><br><br>
+
+<label>Apellido</label><br>
+<input type="text" id="apellido" required><br><br>
+
+<label>Tipo Matrícula</label><br>
+<select id="tipo_matricula">
+<option value="">Seleccione</option>
+<option value="Primera">Primera</option>
+<option value="Segunda">Segunda</option>
+<option value="Tercera">Tercera</option>
+</select><br><br>
+
+<label>N° Matrícula</label><br>
+<input type="text" id="numero_matricula"><br><br>
+
+<label>Correo</label><br>
+<input type="email" id="correo"><br><br>
+
+<label>Teléfono</label><br>
+<input type="text" id="telefono"><br><br>
+
+<label>Password</label><br>
+<input type="text" id="password"><br><br>
+
+<button type="submit">Guardar</button>
+
+<button type="button" onclick="volver()">Volver</button>
+
+</form>
+
+<script src="js/cliente_form.js"></script>
+
+</body>
+</html>

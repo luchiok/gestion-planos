@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<title>Panel Principal</title>
+
+<link rel="stylesheet" href="css/estilos.css">
+
+<style>
+
+.tarjetas{
+
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+
+}
+
+.tarjeta{
+
+border:1px solid #ccc;
+padding:20px;
+width:200px;
+text-align:center;
+background:#f5f5f5;
+
+}
+
+.numero{
+
+font-size:30px;
+font-weight:bold;
+
+}
+
+</style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+<div class="menu">
+
+<a href="index.html">Dashboard</a>
+
+<a href="clientes.html">Clientes</a>
+
+<a href="propietarios.html">Propietarios</a>
+
+<a href="planos.html">Planos</a>
+
+<a href="planos_pendientes.html">Pendientes</a>
+
+</div>
+<h1>Panel Principal</h1>
+
+<div class="tarjetas">
+
+<div class="tarjeta">
+
+<h3>Total Planos</h3>
+<div class="numero" id="total_planos">0</div>
+
+</div>
+
+<div class="tarjeta">
+
+<h3>Planos Pendientes</h3>
+<div class="numero" id="pendientes">0</div>
+
+</div>
+
+<div class="tarjeta">
+
+<h3>Planos del Mes</h3>
+<div class="numero" id="mes">0</div>
+
+</div>
+
+<div class="tarjeta">
+
+<h3>Total Facturado</h3>
+<div class="numero" id="facturado">0</div>
+
+</div>
+
+<div class="tarjeta">
+
+<h3>Total Adeudado</h3>
+<div class="numero" id="adeudado">0</div>
+
+</div>
+
+</div>
+<h2>Ingresos por Mes</h2>
+
+<canvas id="graficoIngresos" width="600" height="300"></canvas>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>

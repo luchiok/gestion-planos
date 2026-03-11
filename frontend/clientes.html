@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<title>Clientes</title>
+
+<link rel="stylesheet" href="css/estilos.css">
+
+</head>
+
+<body>
+<div class="menu">
+
+<a href="index.html">Dashboard</a>
+
+<a href="clientes.html">Clientes</a>
+
+<a href="propietarios.html">Propietarios</a>
+
+<a href="planos.html">Planos</a>
+
+<a href="planos_pendientes.html">Pendientes</a>
+
+</div>
+
+<h1>Clientes (Gasistas)</h1>
+
+<button onclick="location.href='cliente_form.html'">
+Nuevo Cliente
+</button>
+
+<br><br>
+
+<table border="1">
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+<th>Nombre</th>
+<th>Apellido</th>
+<th>Tipo Matrícula</th>
+<th>N° Matrícula</th>
+<th>Correo</th>
+<th>Teléfono</th>
+
+</tr>
+
+</thead>
+
+<tbody id="tablaClientes">
+
+</tbody>
+
+</table>
+
+<script src="js/clientes.js"></script>
+
+</body>
+</html>

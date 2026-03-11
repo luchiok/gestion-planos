@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<title>Gestión de Planos</title>
+
+<link rel="stylesheet" href="css/estilos.css">
+
+</head>
+
+<body>
+
+<!-- MENU -->
+
+<div class="menu">
+
+<a href="index.html">Dashboard</a>
+
+<a href="clientes.html">Clientes</a>
+
+<a href="propietarios.html">Propietarios</a>
+
+<a href="planos.html">Planos</a>
+
+<a href="planos_pendientes.html">Pendientes</a>
+
+</div>
+
+<!-- CONTENIDO -->
+
+<div class="contenido">
+
+<h1>Panel Principal</h1>
+
+<div class="cards">
+
+<div class="card">
+<h2 id="totalPlanos">0</h2>
+<p>Total Planos</p>
+</div>
+
+<div class="card">
+<h2 id="planosPendientes">0</h2>
+<p>Planos Pendientes</p>
+</div>
+
+<div class="card">
+<h2 id="planosMes">0</h2>
+<p>Planos este mes</p>
+</div>
+
+<div class="card">
+<h2 id="totalFacturado">$0</h2>
+<p>Total Facturado</p>
+</div>
+
+<div class="card">
+<h2 id="totalAdeudado">$0</h2>
+<p>Total Adeudado</p>
+</div>
+
+</div>
+
+<br><br>
+
+<h2>Ingresos por mes</h2>
+
+<canvas id="graficoIngresos" height="100"></canvas>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

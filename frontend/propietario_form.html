@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<title>Propietario</title>
+
+<link rel="stylesheet" href="css/estilos.css">
+
+</head>
+
+<body>
+<div class="menu">
+
+<a href="index.html">Dashboard</a>
+
+<a href="clientes.html">Clientes</a>
+
+<a href="propietarios.html">Propietarios</a>
+
+<a href="planos.html">Planos</a>
+
+<a href="planos_pendientes.html">Pendientes</a>
+
+</div>
+<h1>Formulario Propietario</h1>
+
+<form id="formPropietario">
+
+<label>Nombre</label><br>
+<input type="text" id="nombre" required><br><br>
+
+<label>Apellido</label><br>
+<input type="text" id="apellido" required><br><br>
+
+<label>DNI</label><br>
+<input type="text" id="dni"><br><br>
+
+<label>Correo</label><br>
+<input type="email" id="correo"><br><br>
+
+<label>Teléfono</label><br>
+<input type="text" id="telefono"><br><br>
+
+<label>N° Cuenta</label><br>
+<input type="text" id="numero_cuenta"><br><br>
+
+<button type="submit">Guardar</button>
+
+<button type="button" onclick="volver()">Volver</button>
+
+</form>
+
+<script src="js/propietario_form.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<title>Plano</title>
+
+<link rel="stylesheet" href="css/estilos.css">
+
+</head>
+
+<body>
+<div class="menu">
+
+<a href="index.html">Dashboard</a>
+
+<a href="clientes.html">Clientes</a>
+
+<a href="propietarios.html">Propietarios</a>
+
+<a href="planos.html">Planos</a>
+
+<a href="planos_pendientes.html">Pendientes</a>
+
+</div>
+
+<h1>Formulario Plano</h1>
+
+<form id="formPlano">
+
+<label>Número de Plano</label><br>
+<input type="text" id="numero_plano"><br><br>
+
+<label>Fecha</label><br>
+<input type="date" id="fecha"><br><br>
+
+<label>Tipo de Plano</label><br>
+<input type="text" id="tipo"><br><br>
+
+<label>Calle</label><br>
+<input type="text" id="calle"><br><br>
+
+<label>Número</label><br>
+<input type="text" id="numero"><br><br>
+
+<label>Departamento</label><br>
+<input type="text" id="departamento"><br><br>
+
+<label>Entre Calle 1</label><br>
+<input type="text" id="entre_calle_1"><br><br>
+
+<label>Entre Calle 2</label><br>
+<input type="text" id="entre_calle_2"><br><br>
+
+<label>Entre Calle 3</label><br>
+<input type="text" id="entre_calle_3"><br><br>
+
+<label>Localidad</label><br>
+<input type="text" id="localidad"><br><br>
+
+<label>Cliente (Gasista)</label><br>
+<select id="id_cliente"></select><br><br>
+
+<label>Propietario</label><br>
+<select id="id_propietario"><option value="">Sin propietario</option></select><br><br>
+
+<label>Precio</label><br>
+<input type="number" id="precio"><br><br>
+
+<label>Monto Pagado</label><br>
+<input type="number" id="monto_pagado"><br><br>
+
+<label>Estado</label><br>
+<select id="estado">
+
+<option value="Pendiente">Pendiente</option>
+<option value="En proceso">En proceso</option>
+<option value="Finalizado">Finalizado</option>
+
+</select><br><br>
+
+<label>Estado Pago</label><br>
+<select id="estado_pago">
+
+<option value="No pagado">No pagado</option>
+<option value="Parcial">Parcial</option>
+<option value="Pagado">Pagado</option>
+
+</select><br><br>
+
+<label>Observación</label><br>
+<textarea id="observacion"></textarea><br><br>
+
+<button type="submit">Guardar Plano</button>
+
+<button type="button" onclick="volver()">Volver</button>
+
+</form>
+
+<script src="js/plano_form.js"></script>
+
+</body>
+</html>
