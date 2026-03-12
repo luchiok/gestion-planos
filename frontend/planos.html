@@ -23,23 +23,20 @@
 <a href="planos_pendientes.html">Pendientes</a>
 
 </div>
-<h1>Planos</h1>
+<h1>Lista de Planos</h1>
 
-<button onclick="location.href='plano_form.html'">
-Nuevo Plano
-</button>
 
-<br><br>
 
-<h3>Buscar</h3>
 
-Cliente
+
+
+Buscar por Gasista
 <input type="text" id="buscarCliente" onkeyup="filtrarPlanos()">
 
-Dirección
+Buscar por Dirección
 <input type="text" id="buscarDireccion" onkeyup="filtrarPlanos()">
 
-Estado
+Filtrar por Estado
 <select id="buscarEstado" onchange="filtrarPlanos()">
 
 <option value="">Todos</option>
@@ -48,7 +45,9 @@ Estado
 <option value="Finalizado">Finalizado</option>
 
 </select>
-
+<button onclick="location.href='plano_form.html'">
+Ingresar un Nuevo Plano
+</button>
 <br><br>
 
 <table border="1">

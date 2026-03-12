@@ -296,7 +296,7 @@ app.delete("/propietarios/:id", async (req,res)=>{
 
 });
 
-/*OBETENER TODOS LOS PLANOS*/
+/*OBTENER TODOS LOS PLANOS*/
 app.get("/planos", async (req,res)=>{
 
     try{
@@ -341,6 +341,99 @@ ORDER BY p.fecha DESC
         res.json(result.recordset);
 
     }catch(err){
+
+        console.log(err);
+        res.status(500).send("Error");
+
+    }
+
+});
+
+/*VER PLANOS PENDIENTES*/
+app.get("/planos/pendientes", async (req,res)=>{
+
+    try{
+
+        const result = await sql.query(`
+
+        SELECT
+        p.id_plano,
+        p.calle,
+        p.numero,
+        p.localidad,
+        p.estado,
+
+        c.nombre + ' ' + c.apellido AS cliente
+
+        FROM Planos p
+
+        LEFT JOIN Clientes c
+        ON p.id_cliente = c.id_cliente
+
+        WHERE p.estado != 'Finalizado'
+
+        ORDER BY p.fecha ASC
+
+        `);
+
+        res.json(result.recordset);
+
+    }
+    catch(err){
+
+        console.log(err);
+        res.status(500).send("Error");
+
+    }
+
+});
+
+/*BOTON FINALIZAR, LO HACE DESAPARECER DE LA LISTA DE PENDIENTES*/
+app.put("/planos/finalizar/:id", async (req,res)=>{
+
+    const id = req.params.id;
+
+    try{
+
+        await sql.query`
+
+        UPDATE Planos
+        SET estado = 'Finalizado'
+        WHERE id_plano = ${id}
+
+        `;
+
+        res.json({mensaje:"Plano finalizado"});
+
+    }
+    catch(err){
+
+        console.log(err);
+        res.status(500).send("Error");
+
+    }
+
+});
+
+/*OBTENER UN PLANO POR ID*/
+app.get("/planos/:id", async (req,res)=>{
+
+    const id = req.params.id;
+
+    try{
+
+        const result = await sql.query`
+
+        SELECT *
+        FROM Planos
+        WHERE id_plano = ${id}
+
+        `;
+
+        res.json(result.recordset[0]);
+
+    }
+    catch(err){
 
         console.log(err);
         res.status(500).send("Error");
@@ -429,6 +522,58 @@ app.post("/planos", async (req,res)=>{
 
 });
 
+/*EDITAR PLANO*/
+app.put("/planos/:id", async (req,res)=>{
+
+    const id = req.params.id;
+    const p = req.body;
+
+    try{
+
+        await sql.query`
+
+        UPDATE Planos SET
+
+        numero_plano = ${p.numero_plano},
+        fecha = ${p.fecha},
+        tipo = ${p.tipo},
+
+        calle = ${p.calle},
+        numero = ${p.numero},
+        departamento = ${p.departamento},
+
+        entre_calle_1 = ${p.entre_calle_1},
+        entre_calle_2 = ${p.entre_calle_2},
+        entre_calle_3 = ${p.entre_calle_3},
+
+        localidad = ${p.localidad},
+
+        estado = ${p.estado},
+
+        precio = ${p.precio},
+        monto_pagado = ${p.monto_pagado},
+
+        observacion = ${p.observacion},
+
+        id_cliente = ${p.id_cliente},
+        id_propietario = ${p.id_propietario}
+
+        WHERE id_plano = ${id}
+
+        `;
+
+        res.json({mensaje:"Plano actualizado"});
+
+    }
+    catch(err){
+
+        console.log(err);
+        res.status(500).send("Error");
+
+    }
+
+});
+
 /*ESTADISTICAS*/
 
 app.get("/estadisticas", async (req,res)=>{
@@ -504,72 +649,6 @@ app.get("/estadisticas/ingresos-mensuales", async (req,res)=>{
 
 });
 
-
-/*VER PLANOS PENDIENTES*/
-app.get("/planos/pendientes", async (req,res)=>{
-
-    try{
-
-        const result = await sql.query(`
-
-        SELECT
-        p.id_plano,
-        p.calle,
-        p.numero,
-        p.localidad,
-        p.estado,
-
-        c.nombre + ' ' + c.apellido AS cliente
-
-        FROM Planos p
-
-        LEFT JOIN Clientes c
-        ON p.id_cliente = c.id_cliente
-
-        WHERE p.estado != 'Finalizado'
-
-        ORDER BY p.fecha ASC
-
-        `);
-
-        res.json(result.recordset);
-
-    }
-    catch(err){
-
-        console.log(err);
-        res.status(500).send("Error");
-
-    }
-
-});
-
-/*BOTON FINALIZAR, LO HACE DESAPARECER DE LA LISTA DE PENDIENTES*/
-app.put("/planos/finalizar/:id", async (req,res)=>{
-
-    const id = req.params.id;
-
-    try{
-
-        await sql.query`
-
-        UPDATE Planos
-        SET estado = 'Finalizado'
-        WHERE id_plano = ${id}
-
-        `;
-
-        res.json({mensaje:"Plano finalizado"});
-
-    }
-    catch(err){
-
-        console.log(err);
-        res.status(500).send("Error");
-
-    }
-
-});
 
 /*borrar plano*/
 app.delete("/planos/:id", async (req,res)=>{

@@ -57,9 +57,9 @@ function mostrarPlanos(lista){
 
         <td>
 
-        <button onclick="editarPlano(${p.id_plano})">✏</button>
+        <button onclick="editarPlano(${p.id_plano})">🔎</button>
 
-        <button onclick="borrarPlano(${p.id_plano})">🗑</button>
+        <button onclick="borrarPlano(${p.id_plano})">💣</button>
 
         <button onclick="finalizarPlano(${p.id_plano})">✅</button>
 

@@ -10,16 +10,13 @@
 </head>
 
 <body>
+
 <div class="menu">
 
 <a href="index.html">Dashboard</a>
-
 <a href="clientes.html">Clientes</a>
-
 <a href="propietarios.html">Propietarios</a>
-
 <a href="planos.html">Planos</a>
-
 <a href="planos_pendientes.html">Pendientes</a>
 
 </div>
@@ -28,72 +25,129 @@
 
 <form id="formPlano">
 
-<label>Número de Plano</label><br>
-<input type="text" id="numero_plano"><br><br>
+<div class="form-grid">
 
-<label>Fecha</label><br>
-<input type="date" id="fecha"><br><br>
+<div class="campo">
+<label>Fecha</label>
+<input type="date" id="fecha">
+</div>
 
-<label>Tipo de Plano</label><br>
-<input type="text" id="tipo"><br><br>
+<div class="campo">
+<label>Cantidad de Planos</label>
+<select id="numero_plano" required>
 
-<label>Calle</label><br>
-<input type="text" id="calle"><br><br>
+<option value="">Seleccione</option>
 
-<label>Número</label><br>
-<input type="text" id="numero"><br><br>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
 
-<label>Departamento</label><br>
-<input type="text" id="departamento"><br><br>
+</select>
+</div>
 
-<label>Entre Calle 1</label><br>
-<input type="text" id="entre_calle_1"><br><br>
+<div class="campo">
+<label>Tipo de Plano</label>
+<select id="tipo">
+<option>Casa</option>
+<option>Departamentos</option>
+<option>Comercial</option>
+<option>Escuela</option>
+</select>
+</div>
 
-<label>Entre Calle 2</label><br>
-<input type="text" id="entre_calle_2"><br><br>
 
-<label>Entre Calle 3</label><br>
-<input type="text" id="entre_calle_3"><br><br>
+<div class="campo">
+<label>Calle</label>
+<input type="text" id="calle">
+</div>
 
-<label>Localidad</label><br>
-<input type="text" id="localidad"><br><br>
+<div class="campo">
+<label>Número</label>
+<input type="text" id="numero">
+</div>
 
-<label>Cliente (Gasista)</label><br>
-<select id="id_cliente"></select><br><br>
+<div class="campo">
+<label>Departamento</label>
+<input type="text" id="departamento">
+</div>
 
-<label>Propietario</label><br>
-<select id="id_propietario"><option value="">Sin propietario</option></select><br><br>
+<div class="campo">
+<label>Entre Calle 1</label>
+<input type="text" id="entre_calle_1">
+</div>
 
-<label>Precio</label><br>
-<input type="number" id="precio"><br><br>
+<div class="campo">
+<label>Entre Calle 2</label>
+<input type="text" id="entre_calle_2">
+</div>
 
-<label>Monto Pagado</label><br>
-<input type="number" id="monto_pagado"><br><br>
+<div class="campo">
+<label>Entre Calle 3</label>
+<input type="text" id="entre_calle_3">
+</div>
 
-<label>Estado</label><br>
+<div class="campo">
+<label>Localidad</label>
+<select id="localidad">
+
+<option value="Punta Alta">Punta Alta</option>
+<option value="Bahia Blanca">Bahia Blanca</option>
+<option value="Sierra de la Ventana">Sierra de la Ventana</option>
+<option value="Monte Hermoso">Monte Hermoso</option>
+
+</select>
+</div>
+
+<div class="campo">
+<label>Cliente (Gasista)</label>
+<select id="id_cliente"></select>
+</div>
+
+<div class="campo">
+<label>Propietario</label>
+<select id="id_propietario">
+<option value="">Sin propietario</option>
+</select>
+</div>
+
+<div class="campo">
+<label>Precio</label>
+<input type="text" id="precio" readonly>
+</div>
+
+<div class="campo">
+<label>Monto Pagado</label>
+<input type="text" id="monto_pagado">
+</div>
+
+<div class="campo">
+<label>Estado</label>
 <select id="estado">
-
 <option value="Pendiente">Pendiente</option>
 <option value="En proceso">En proceso</option>
 <option value="Finalizado">Finalizado</option>
+</select>
+</div>
 
-</select><br><br>
 
-<label>Estado Pago</label><br>
-<select id="estado_pago">
+<div class="campo observacion">
+<label>Observación</label>
+<textarea id="observacion"></textarea>
+</div>
 
-<option value="No pagado">No pagado</option>
-<option value="Parcial">Parcial</option>
-<option value="Pagado">Pagado</option>
+</div>
 
-</select><br><br>
-
-<label>Observación</label><br>
-<textarea id="observacion"></textarea><br><br>
-
+<div class="botones">
 <button type="submit">Guardar Plano</button>
-
 <button type="button" onclick="volver()">Volver</button>
+</div>
 
 </form>
 
